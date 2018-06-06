@@ -1,4 +1,1369 @@
-EESchema Schematic File Version 2
-EELAYER 25 0
+EESchema Schematic File Version 4
+LIBS:1ump-slave-cache
+EELAYER 26 0
 EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text Label 10250 1050 2    50   ~ 0
+MCU-SBI
+Text Label 10250 950  2    50   ~ 0
+MCU-SBO
+Text Label 10250 1150 2    50   ~ 0
+MCU-RX
+Text Label 10250 1250 2    50   ~ 0
+MCU-TX
+Text Label 10250 1350 2    50   ~ 0
+MCU-RST
+$Comp
+L power:GND #PWR?
+U 1 1 5B183E83
+P 10250 1450
+F 0 "#PWR?" H 10250 1200 50  0001 C CNN
+F 1 "GND" H 10255 1277 50  0000 C CNN
+F 2 "" H 10250 1450 50  0001 C CNN
+F 3 "" H 10250 1450 50  0001 C CNN
+	1    10250 1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR?
+U 1 1 5B183E89
+P 10250 850
+F 0 "#PWR?" H 10250 700 50  0001 C CNN
+F 1 "VCC" H 10267 1023 50  0000 C CNN
+F 2 "" H 10250 850 50  0001 C CNN
+F 3 "" H 10250 850 50  0001 C CNN
+	1    10250 850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x07 J?
+U 1 1 5B183E8F
+P 10450 1150
+F 0 "J?" H 10530 1192 50  0000 L CNN
+F 1 "Conn_01x07" H 10530 1101 50  0000 L CNN
+F 2 "" H 10450 1150 50  0001 C CNN
+F 3 "~" H 10450 1150 50  0001 C CNN
+	1    10450 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x03 J?
+U 1 1 5B183E96
+P 750 1500
+F 0 "J?" H 670 1817 50  0000 C CNN
+F 1 "Conn_01x03" H 670 1726 50  0000 C CNN
+F 2 "" H 750 1500 50  0001 C CNN
+F 3 "~" H 750 1500 50  0001 C CNN
+	1    750  1500
+	-1   0    0    -1  
+$EndComp
+Text Label 950  1400 0    50   ~ 0
+FT-TX
+Text Label 950  1500 0    50   ~ 0
+FT-RX
+Text Label 950  1600 0    50   ~ 0
+FT-DTR
+$Comp
+L power:VCC #PWR?
+U 1 1 5B183EA0
+P 4950 1100
+F 0 "#PWR?" H 4950 950 50  0001 C CNN
+F 1 "VCC" H 4967 1273 50  0000 C CNN
+F 2 "" H 4950 1100 50  0001 C CNN
+F 3 "" H 4950 1100 50  0001 C CNN
+	1    4950 1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5B183EA6
+P 4950 1600
+F 0 "#PWR?" H 4950 1350 50  0001 C CNN
+F 1 "GND" H 4955 1427 50  0000 C CNN
+F 2 "" H 4950 1600 50  0001 C CNN
+F 3 "" H 4950 1600 50  0001 C CNN
+	1    4950 1600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4950 1600 4950 1450
+Wire Wire Line
+	4950 1100 4950 1150
+Text Label 4950 1250 2    50   ~ 0
+CSn
+$Comp
+L Custom_Logic_74xxx:OR_GATE U?
+U 1 1 5B183EB3
+P 5750 1350
+F 0 "U?" H 6100 1200 50  0000 C CNN
+F 1 "SN74LVC1G32DCKR" H 6000 1900 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-353_SC-70-5" H 5750 1350 50  0001 C CNN
+F 3 "" H 5750 1350 50  0001 C CNN
+F 4 "SN74LVC1G32DCKR" H 5750 1350 50  0001 C CNN "Manufacture Part Number"
+F 5 "Texas Instruments" H 5750 1350 50  0001 C CNN "Manufacturer"
+F 6 "C7840" H 5750 1350 50  0001 C CNN "LCSC Part Number"
+F 7 "SOT-353" H 5750 1350 50  0001 C CNN "Package"
+	1    5750 1350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5400 1300 5650 1300
+$Comp
+L power:VCC #PWR?
+U 1 1 5B183EBB
+P 5650 1100
+F 0 "#PWR?" H 5650 950 50  0001 C CNN
+F 1 "VCC" H 5667 1273 50  0000 C CNN
+F 2 "" H 5650 1100 50  0001 C CNN
+F 3 "" H 5650 1100 50  0001 C CNN
+	1    5650 1100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5650 1100 5650 1200
+$Comp
+L power:GND #PWR?
+U 1 1 5B183EC2
+P 5650 1600
+F 0 "#PWR?" H 5650 1350 50  0001 C CNN
+F 1 "GND" H 5655 1427 50  0000 C CNN
+F 2 "" H 5650 1600 50  0001 C CNN
+F 3 "" H 5650 1600 50  0001 C CNN
+	1    5650 1600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5650 1600 5650 1500
+Text Label 7050 1300 0    50   ~ 0
+MCU-RX
+$Comp
+L power:GND #PWR?
+U 1 1 5B183ECA
+P 6600 1250
+F 0 "#PWR?" H 6600 1000 50  0001 C CNN
+F 1 "GND" V 6605 1122 50  0000 R CNN
+F 2 "" H 6600 1250 50  0001 C CNN
+F 3 "" H 6600 1250 50  0001 C CNN
+	1    6600 1250
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6600 1350 6200 1350
+$Comp
+L power:VCOM #PWR?
+U 1 1 5B183ED1
+P 6600 1100
+F 0 "#PWR?" H 6600 950 50  0001 C CNN
+F 1 "VCOM" H 6617 1273 50  0000 C CNN
+F 2 "" H 6600 1100 50  0001 C CNN
+F 3 "" H 6600 1100 50  0001 C CNN
+	1    6600 1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5B183ED7
+P 6600 1600
+F 0 "#PWR?" H 6600 1350 50  0001 C CNN
+F 1 "GND" H 6605 1427 50  0000 C CNN
+F 2 "" H 6600 1600 50  0001 C CNN
+F 3 "" H 6600 1600 50  0001 C CNN
+	1    6600 1600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6600 1600 6600 1450
+$Comp
+L Custom_Logic_74xxx:Buffer_Noninverting_1G U?
+U 1 1 5B183EE2
+P 5050 1300
+F 0 "U?" H 5300 1200 50  0000 C CNN
+F 1 "SN74LVC1G125DCKR" H 5150 1800 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-353_SC-70-5" H 5050 1300 50  0001 C CNN
+F 3 "" H 5050 1300 50  0001 C CNN
+F 4 "SN74LVC1G125DCKR" H 5050 1300 50  0001 C CNN "Manufacture Part Number"
+F 5 "Texas Instruments" H 5050 1300 50  0001 C CNN "Manufacturer"
+F 6 "C7833" H 5050 1300 50  0001 C CNN "LCSC Part Number"
+F 7 "SOT-353" H 5050 1300 50  0001 C CNN "Package"
+	1    5050 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Logic_74xxx:Buffer_Noninverting_1G U?
+U 1 1 5B183EED
+P 6700 1300
+F 0 "U?" H 6950 1200 50  0000 C CNN
+F 1 "SN74LVC1G125DCKR" H 6800 1800 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-353_SC-70-5" H 6700 1300 50  0001 C CNN
+F 3 "" H 6700 1300 50  0001 C CNN
+F 4 "SN74LVC1G125DCKR" H 6700 1300 50  0001 C CNN "Manufacture Part Number"
+F 5 "Texas Instruments" H 6700 1300 50  0001 C CNN "Manufacturer"
+F 6 "C7833" H 6700 1300 50  0001 C CNN "LCSC Part Number"
+F 7 "SOT-353" H 6700 1300 50  0001 C CNN "Package"
+	1    6700 1300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5550 1400 5650 1400
+Wire Wire Line
+	5400 2400 5550 2400
+Wire Wire Line
+	5550 2400 5550 1400
+$Comp
+L Custom_Logic_74xxx:NAND_GATE U?
+U 1 1 5B183EFB
+P 4200 2450
+F 0 "U?" H 4400 2350 50  0000 L CNN
+F 1 "SN74LVC1G00DCKR" H 3900 3000 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-353_SC-70-5" H 4200 2450 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/Texas-Instruments-TI-SN74LVC1G00DCKR_C8185.pdf" H 4200 2450 50  0001 C CNN
+F 4 "SN74LVC1G00DCKR" H 4200 2450 50  0001 C CNN "Manufacture Part Number"
+F 5 "Texas Instruments" H 4200 2450 50  0001 C CNN "Manufacturer"
+F 6 "C8185" H 4200 2450 50  0001 C CNN "LCSC Part Number"
+F 7 "SOT-353" H 4200 2450 50  0001 C CNN "Package"
+	1    4200 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5B183F02
+P 4250 2700
+F 0 "#PWR?" H 4250 2450 50  0001 C CNN
+F 1 "GND" H 4255 2527 50  0000 C CNN
+F 2 "" H 4250 2700 50  0001 C CNN
+F 3 "" H 4250 2700 50  0001 C CNN
+	1    4250 2700
+	1    0    0    -1  
+$EndComp
+Text Label 4100 2400 2    50   ~ 0
+CSn
+$Comp
+L power:VCC #PWR?
+U 1 1 5B183F09
+P 4250 2200
+F 0 "#PWR?" H 4250 2050 50  0001 C CNN
+F 1 "VCC" H 4267 2373 50  0000 C CNN
+F 2 "" H 4250 2200 50  0001 C CNN
+F 3 "" H 4250 2200 50  0001 C CNN
+	1    4250 2200
+	1    0    0    -1  
+$EndComp
+Text Label 4800 2550 3    50   ~ 0
+FT-TX
+Wire Wire Line
+	4950 2450 4800 2450
+$Comp
+L power:GND #PWR?
+U 1 1 5B183F11
+P 4950 2700
+F 0 "#PWR?" H 4950 2450 50  0001 C CNN
+F 1 "GND" H 4955 2527 50  0000 C CNN
+F 2 "" H 4950 2700 50  0001 C CNN
+F 3 "" H 4950 2700 50  0001 C CNN
+	1    4950 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4950 2550 4950 2700
+Wire Wire Line
+	4450 2450 4700 2450
+Wire Wire Line
+	4950 2200 4950 2250
+$Comp
+L power:VCC #PWR?
+U 1 1 5B183F1A
+P 4950 2200
+F 0 "#PWR?" H 4950 2050 50  0001 C CNN
+F 1 "VCC" H 4967 2373 50  0000 C CNN
+F 2 "" H 4950 2200 50  0001 C CNN
+F 3 "" H 4950 2200 50  0001 C CNN
+	1    4950 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4700 2350 4950 2350
+Wire Wire Line
+	4700 2450 4700 2350
+$Comp
+L Custom_Logic_74xxx:Buffer_Noninverting_1G U?
+U 1 1 5B183F26
+P 5050 2400
+F 0 "U?" H 5300 2300 50  0000 C CNN
+F 1 "SN74LVC1G125DCKR" H 5150 2900 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-353_SC-70-5" H 5050 2400 50  0001 C CNN
+F 3 "" H 5050 2400 50  0001 C CNN
+F 4 "SN74LVC1G125DCKR" H 5050 2400 50  0001 C CNN "Manufacture Part Number"
+F 5 "Texas Instruments" H 5050 2400 50  0001 C CNN "Manufacturer"
+F 6 "C7833" H 5050 2400 50  0001 C CNN "LCSC Part Number"
+F 7 "SOT-353" H 5050 2400 50  0001 C CNN "Package"
+	1    5050 2400
+	1    0    0    -1  
+$EndComp
+Text Label 4950 1350 2    50   ~ 0
+TWCL-TX
+Text Label 950  950  0    50   ~ 0
+TWCL-SB
+Text Label 950  850  0    50   ~ 0
+TECL-RX
+Text Label 950  750  0    50   ~ 0
+TWCL-TX
+$Comp
+L Connector:Conn_01x03 J?
+U 1 1 5B183F31
+P 750 850
+F 0 "J?" H 670 1167 50  0000 C CNN
+F 1 "Conn_01x03" H 670 1076 50  0000 C CNN
+F 2 "" H 750 850 50  0001 C CNN
+F 3 "~" H 750 850 50  0001 C CNN
+	1    750  850 
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5B183F3C
+P 4250 3550
+F 0 "R?" H 4320 3596 50  0000 L CNN
+F 1 "1k" H 4320 3505 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 4180 3550 50  0001 C CNN
+F 3 "~" H 4250 3550 50  0001 C CNN
+F 4 "0805W8F1001T5E" H 4250 3550 50  0001 C CNN "Manufacture Part Number"
+F 5 "Uniroyal Elec" H 4250 3550 50  0001 C CNN "Manufacturer"
+F 6 "C17513" H 4250 3550 50  0001 C CNN "LCSC Part Number"
+F 7 "0805" H 4250 3550 50  0001 C CNN "Package"
+	1    4250 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D_ALT D?
+U 1 1 5B183F47
+P 3800 3550
+F 0 "D?" V 3754 3629 50  0000 L CNN
+F 1 "1N4007" V 3845 3629 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-123" H 3800 3550 50  0001 C CNN
+F 3 "~" H 3800 3550 50  0001 C CNN
+F 4 "1N4007" V 3800 3550 50  0001 C CNN "Manufacture Part Number"
+F 5 "Guangdong Hottech" V 3800 3550 50  0001 C CNN "Manufacturer"
+F 6 "C181127" V 3800 3550 50  0001 C CNN "LCSC Part Number"
+F 7 "SOD-123" V 3800 3550 50  0001 C CNN "Package"
+	1    3800 3550
+	0    1    1    0   
+$EndComp
+$Comp
+L power:VCC #PWR?
+U 1 1 5B183F4E
+P 4250 3200
+F 0 "#PWR?" H 4250 3050 50  0001 C CNN
+F 1 "VCC" H 4267 3373 50  0000 C CNN
+F 2 "" H 4250 3200 50  0001 C CNN
+F 3 "" H 4250 3200 50  0001 C CNN
+	1    4250 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4250 3200 4250 3300
+Wire Wire Line
+	4250 3300 3800 3300
+Wire Wire Line
+	3800 3300 3800 3400
+Connection ~ 4250 3300
+Wire Wire Line
+	4250 3300 4250 3400
+Wire Wire Line
+	3800 3700 3800 3800
+Wire Wire Line
+	3800 3800 4250 3800
+Wire Wire Line
+	4250 3800 4250 3700
+Wire Wire Line
+	4250 3800 4250 3900
+Connection ~ 4250 3800
+$Comp
+L power:GND #PWR?
+U 1 1 5B183F5E
+P 4250 4450
+F 0 "#PWR?" H 4250 4200 50  0001 C CNN
+F 1 "GND" H 4255 4277 50  0000 C CNN
+F 2 "" H 4250 4450 50  0001 C CNN
+F 3 "" H 4250 4450 50  0001 C CNN
+	1    4250 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4250 4450 4250 4300
+$Comp
+L Transistor_FET:2N7002 Q?
+U 1 1 5B183F69
+P 4350 4100
+F 0 "Q?" H 4556 4146 50  0000 L CNN
+F 1 "2N7002" H 4556 4055 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 4550 4025 50  0001 L CIN
+F 3 "https://www.fairchildsemi.com/datasheets/2N/2N7002.pdf" H 4350 4100 50  0001 L CNN
+F 4 "2N7002-G" H 4350 4100 50  0001 C CNN "Manufacture Part Number"
+F 5 "Changjiang Electronics Tech (CJ)" H 4350 4100 50  0001 C CNN "Manufacturer"
+F 6 "C164913" H 4350 4100 50  0001 C CNN "LCSC Part Number"
+F 7 "SOT-23-3" H 4350 4100 50  0001 C CNN "Package"
+	1    4350 4100
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Custom_Logic_74xxx:Buffer_Noninverting_1G U?
+U 1 1 5B183F74
+P 4900 4100
+F 0 "U?" H 5150 4000 50  0000 C CNN
+F 1 "SN74LVC1G125DCKR" H 4900 4600 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-353_SC-70-5" H 4900 4100 50  0001 C CNN
+F 3 "" H 4900 4100 50  0001 C CNN
+F 4 "SN74LVC1G125DCKR" H 4900 4100 50  0001 C CNN "Manufacture Part Number"
+F 5 "Texas Instruments" H 4900 4100 50  0001 C CNN "Manufacturer"
+F 6 "C7833" H 4900 4100 50  0001 C CNN "LCSC Part Number"
+F 7 "SOT-353" H 4900 4100 50  0001 C CNN "Package"
+	1    4900 4100
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR?
+U 1 1 5B183F7B
+P 5000 3900
+F 0 "#PWR?" H 5000 3750 50  0001 C CNN
+F 1 "VCC" H 5017 4073 50  0000 C CNN
+F 2 "" H 5000 3900 50  0001 C CNN
+F 3 "" H 5000 3900 50  0001 C CNN
+	1    5000 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5B183F81
+P 5000 4450
+F 0 "#PWR?" H 5000 4200 50  0001 C CNN
+F 1 "GND" H 5005 4277 50  0000 C CNN
+F 2 "" H 5000 4450 50  0001 C CNN
+F 3 "" H 5000 4450 50  0001 C CNN
+	1    5000 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5000 4450 5000 4250
+Text Label 5000 4050 0    50   ~ 0
+CSn
+Wire Wire Line
+	4700 2350 4600 2350
+Connection ~ 4700 2350
+Text Label 4600 2350 2    50   ~ 0
+NCSn
+Wire Wire Line
+	3800 3800 3700 3800
+Connection ~ 3800 3800
+Text Label 3700 3800 2    50   ~ 0
+TWCL-RX
+$Comp
+L Custom_Logic_74xxx:NAND_GATE U?
+U 1 1 5B183F93
+P 5800 4150
+F 0 "U?" H 6000 4050 50  0000 L CNN
+F 1 "SN74LVC1G00DCKR" H 5500 4700 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-353_SC-70-5" H 5800 4150 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/Texas-Instruments-TI-SN74LVC1G00DCKR_C8185.pdf" H 5800 4150 50  0001 C CNN
+F 4 "SN74LVC1G00DCKR" H 5800 4150 50  0001 C CNN "Manufacture Part Number"
+F 5 "Texas Instruments" H 5800 4150 50  0001 C CNN "Manufacturer"
+F 6 "C8185" H 5800 4150 50  0001 C CNN "LCSC Part Number"
+F 7 "SOT-353" H 5800 4150 50  0001 C CNN "Package"
+	1    5800 4150
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR?
+U 1 1 5B183F9A
+P 5750 3900
+F 0 "#PWR?" H 5750 3750 50  0001 C CNN
+F 1 "VCC" H 5767 4073 50  0000 C CNN
+F 2 "" H 5750 3900 50  0001 C CNN
+F 3 "" H 5750 3900 50  0001 C CNN
+	1    5750 3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5000 3900 5000 3950
+Wire Wire Line
+	5000 4150 5550 4150
+$Comp
+L power:GND #PWR?
+U 1 1 5B183FA2
+P 5750 4450
+F 0 "#PWR?" H 5750 4200 50  0001 C CNN
+F 1 "GND" H 5755 4277 50  0000 C CNN
+F 2 "" H 5750 4450 50  0001 C CNN
+F 3 "" H 5750 4450 50  0001 C CNN
+	1    5750 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5750 4450 5750 4400
+Text Label 5900 4100 0    50   ~ 0
+MCU-TX
+$Comp
+L Device:R R?
+U 1 1 5B183FAE
+P 7100 3550
+F 0 "R?" H 7170 3596 50  0000 L CNN
+F 1 "1k" H 7170 3505 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 7030 3550 50  0001 C CNN
+F 3 "~" H 7100 3550 50  0001 C CNN
+F 4 "0805W8F1001T5E" H 7100 3550 50  0001 C CNN "Manufacture Part Number"
+F 5 "Uniroyal Elec" H 7100 3550 50  0001 C CNN "Manufacturer"
+F 6 "C17513" H 7100 3550 50  0001 C CNN "LCSC Part Number"
+F 7 "0805" H 7100 3550 50  0001 C CNN "Package"
+	1    7100 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D_ALT D?
+U 1 1 5B183FB9
+P 6650 3550
+F 0 "D?" V 6604 3629 50  0000 L CNN
+F 1 "1N4007" V 6695 3629 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-123" H 6650 3550 50  0001 C CNN
+F 3 "~" H 6650 3550 50  0001 C CNN
+F 4 "1N4007" V 6650 3550 50  0001 C CNN "Manufacture Part Number"
+F 5 "Guangdong Hottech" V 6650 3550 50  0001 C CNN "Manufacturer"
+F 6 "C181127" V 6650 3550 50  0001 C CNN "LCSC Part Number"
+F 7 "SOD-123" V 6650 3550 50  0001 C CNN "Package"
+	1    6650 3550
+	0    1    1    0   
+$EndComp
+$Comp
+L power:VCC #PWR?
+U 1 1 5B183FC0
+P 7100 3200
+F 0 "#PWR?" H 7100 3050 50  0001 C CNN
+F 1 "VCC" H 7117 3373 50  0000 C CNN
+F 2 "" H 7100 3200 50  0001 C CNN
+F 3 "" H 7100 3200 50  0001 C CNN
+	1    7100 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7100 3200 7100 3300
+Wire Wire Line
+	7100 3300 6650 3300
+Wire Wire Line
+	6650 3300 6650 3400
+Connection ~ 7100 3300
+Wire Wire Line
+	7100 3300 7100 3400
+Wire Wire Line
+	6650 3700 6650 3800
+Wire Wire Line
+	6650 3800 7100 3800
+Wire Wire Line
+	7100 3800 7100 3700
+Wire Wire Line
+	7100 3800 7100 3900
+Connection ~ 7100 3800
+$Comp
+L power:GND #PWR?
+U 1 1 5B183FD0
+P 7100 4450
+F 0 "#PWR?" H 7100 4200 50  0001 C CNN
+F 1 "GND" H 7105 4277 50  0000 C CNN
+F 2 "" H 7100 4450 50  0001 C CNN
+F 3 "" H 7100 4450 50  0001 C CNN
+	1    7100 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7100 4450 7100 4300
+$Comp
+L Transistor_FET:2N7002 Q?
+U 1 1 5B183FDB
+P 7200 4100
+F 0 "Q?" H 7406 4146 50  0000 L CNN
+F 1 "2N7002" H 7406 4055 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 7400 4025 50  0001 L CIN
+F 3 "https://www.fairchildsemi.com/datasheets/2N/2N7002.pdf" H 7200 4100 50  0001 L CNN
+F 4 "2N7002-G" H 7200 4100 50  0001 C CNN "Manufacture Part Number"
+F 5 "Changjiang Electronics Tech (CJ)" H 7200 4100 50  0001 C CNN "Manufacturer"
+F 6 "C164913" H 7200 4100 50  0001 C CNN "LCSC Part Number"
+F 7 "SOT-23-3" H 7200 4100 50  0001 C CNN "Package"
+	1    7200 4100
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Custom_Logic_74xxx:Buffer_Noninverting_1G U?
+U 1 1 5B183FE6
+P 7750 4100
+F 0 "U?" H 8000 4000 50  0000 C CNN
+F 1 "SN74LVC1G125DCKR" H 7750 4600 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-353_SC-70-5" H 7750 4100 50  0001 C CNN
+F 3 "" H 7750 4100 50  0001 C CNN
+F 4 "SN74LVC1G125DCKR" H 7750 4100 50  0001 C CNN "Manufacture Part Number"
+F 5 "Texas Instruments" H 7750 4100 50  0001 C CNN "Manufacturer"
+F 6 "C7833" H 7750 4100 50  0001 C CNN "LCSC Part Number"
+F 7 "SOT-353" H 7750 4100 50  0001 C CNN "Package"
+	1    7750 4100
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR?
+U 1 1 5B183FED
+P 7850 3900
+F 0 "#PWR?" H 7850 3750 50  0001 C CNN
+F 1 "VCC" H 7867 4073 50  0000 C CNN
+F 2 "" H 7850 3900 50  0001 C CNN
+F 3 "" H 7850 3900 50  0001 C CNN
+	1    7850 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5B183FF3
+P 7850 4450
+F 0 "#PWR?" H 7850 4200 50  0001 C CNN
+F 1 "GND" H 7855 4277 50  0000 C CNN
+F 2 "" H 7850 4450 50  0001 C CNN
+F 3 "" H 7850 4450 50  0001 C CNN
+	1    7850 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7850 4450 7850 4250
+Text Label 7850 4050 0    50   ~ 0
+NCSn
+Wire Wire Line
+	6650 3800 6550 3800
+Connection ~ 6650 3800
+Text Label 6550 3800 2    50   ~ 0
+FT-RX
+Wire Wire Line
+	7850 3900 7850 3950
+Text Label 7850 4150 0    50   ~ 0
+MCU-TX
+$Comp
+L power:VCC #PWR?
+U 1 1 5B184000
+P 5900 4200
+F 0 "#PWR?" H 5900 4050 50  0001 C CNN
+F 1 "VCC" V 5917 4328 50  0000 L CNN
+F 2 "" H 5900 4200 50  0001 C CNN
+F 3 "" H 5900 4200 50  0001 C CNN
+	1    5900 4200
+	0    1    1    0   
+$EndComp
+$Comp
+L power:VCC #PWR?
+U 1 1 5B184006
+P 4100 2500
+F 0 "#PWR?" H 4100 2350 50  0001 C CNN
+F 1 "VCC" V 4118 2627 50  0000 L CNN
+F 2 "" H 4100 2500 50  0001 C CNN
+F 3 "" H 4100 2500 50  0001 C CNN
+	1    4100 2500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5B18400C
+P 6550 5600
+F 0 "C?" V 6802 5600 50  0000 C CNN
+F 1 "100n" V 6711 5600 50  0000 C CNN
+F 2 "" H 6588 5450 50  0001 C CNN
+F 3 "~" H 6550 5600 50  0001 C CNN
+	1    6550 5600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5B184013
+P 6800 5350
+F 0 "R?" H 6870 5396 50  0000 L CNN
+F 1 "10k" H 6870 5305 50  0000 L CNN
+F 2 "" V 6730 5350 50  0001 C CNN
+F 3 "~" H 6800 5350 50  0001 C CNN
+	1    6800 5350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6800 5500 6800 5600
+Wire Wire Line
+	6800 5600 6700 5600
+$Comp
+L power:VCOM #PWR?
+U 1 1 5B18401C
+P 6800 5100
+F 0 "#PWR?" H 6800 4950 50  0001 C CNN
+F 1 "VCOM" H 6817 5273 50  0000 C CNN
+F 2 "" H 6800 5100 50  0001 C CNN
+F 3 "" H 6800 5100 50  0001 C CNN
+	1    6800 5100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6600 1100 6600 1150
+$Comp
+L Device:R R?
+U 1 1 5B184027
+P 6200 5350
+F 0 "R?" H 6270 5396 50  0000 L CNN
+F 1 "1k" H 6270 5305 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 6130 5350 50  0001 C CNN
+F 3 "~" H 6200 5350 50  0001 C CNN
+F 4 "0805W8F1001T5E" H 6200 5350 50  0001 C CNN "Manufacture Part Number"
+F 5 "Uniroyal Elec" H 6200 5350 50  0001 C CNN "Manufacturer"
+F 6 "C17513" H 6200 5350 50  0001 C CNN "LCSC Part Number"
+F 7 "0805" H 6200 5350 50  0001 C CNN "Package"
+	1    6200 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_FET:2N7002 Q?
+U 1 1 5B184032
+P 6100 5900
+F 0 "Q?" H 6305 5946 50  0000 L CNN
+F 1 "2N7002" H 6305 5855 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 6300 5825 50  0001 L CIN
+F 3 "https://www.fairchildsemi.com/datasheets/2N/2N7002.pdf" H 6100 5900 50  0001 L CNN
+F 4 "2N7002-G" H 6100 5900 50  0001 C CNN "Manufacture Part Number"
+F 5 "Changjiang Electronics Tech (CJ)" H 6100 5900 50  0001 C CNN "Manufacturer"
+F 6 "C164913" H 6100 5900 50  0001 C CNN "LCSC Part Number"
+F 7 "SOT-23-3" H 6100 5900 50  0001 C CNN "Package"
+	1    6100 5900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCOM #PWR?
+U 1 1 5B184039
+P 6200 5100
+F 0 "#PWR?" H 6200 4950 50  0001 C CNN
+F 1 "VCOM" H 6217 5273 50  0000 C CNN
+F 2 "" H 6200 5100 50  0001 C CNN
+F 3 "" H 6200 5100 50  0001 C CNN
+	1    6200 5100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6200 5700 6200 5600
+Wire Wire Line
+	6400 5600 6200 5600
+Connection ~ 6200 5600
+Wire Wire Line
+	6200 5600 6200 5500
+$Comp
+L power:GND #PWR?
+U 1 1 5B184043
+P 6200 6250
+F 0 "#PWR?" H 6200 6000 50  0001 C CNN
+F 1 "GND" H 6205 6077 50  0000 C CNN
+F 2 "" H 6200 6250 50  0001 C CNN
+F 3 "" H 6200 6250 50  0001 C CNN
+	1    6200 6250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6200 6250 6200 6100
+$Comp
+L Device:D_ALT D?
+U 1 1 5B18404E
+P 5700 5350
+F 0 "D?" V 5654 5429 50  0000 L CNN
+F 1 "1N4007" V 5745 5429 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-123" H 5700 5350 50  0001 C CNN
+F 3 "~" H 5700 5350 50  0001 C CNN
+F 4 "1N4007" V 5700 5350 50  0001 C CNN "Manufacture Part Number"
+F 5 "Guangdong Hottech" V 5700 5350 50  0001 C CNN "Manufacturer"
+F 6 "C181127" V 5700 5350 50  0001 C CNN "LCSC Part Number"
+F 7 "SOD-123" V 5700 5350 50  0001 C CNN "Package"
+	1    5700 5350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5700 5500 5700 5600
+Wire Wire Line
+	5700 5600 6200 5600
+$Comp
+L Custom_Logic_74xxx:NAND_GATE U?
+U 1 1 5B18405B
+P 4250 5950
+F 0 "U?" H 4450 5850 50  0000 L CNN
+F 1 "SN74LVC1G00DCKR" H 3950 6500 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-353_SC-70-5" H 4250 5950 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/Texas-Instruments-TI-SN74LVC1G00DCKR_C8185.pdf" H 4250 5950 50  0001 C CNN
+F 4 "SN74LVC1G00DCKR" H 4250 5950 50  0001 C CNN "Manufacture Part Number"
+F 5 "Texas Instruments" H 4250 5950 50  0001 C CNN "Manufacturer"
+F 6 "C8185" H 4250 5950 50  0001 C CNN "LCSC Part Number"
+F 7 "SOT-353" H 4250 5950 50  0001 C CNN "Package"
+	1    4250 5950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Logic_74xxx:Buffer_Noninverting_1G U?
+U 1 1 5B184066
+P 5100 5900
+F 0 "U?" H 5350 5800 50  0000 C CNN
+F 1 "SN74LVC1G125DCKR" H 5200 6400 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-353_SC-70-5" H 5100 5900 50  0001 C CNN
+F 3 "" H 5100 5900 50  0001 C CNN
+F 4 "SN74LVC1G125DCKR" H 5100 5900 50  0001 C CNN "Manufacture Part Number"
+F 5 "Texas Instruments" H 5100 5900 50  0001 C CNN "Manufacturer"
+F 6 "C7833" H 5100 5900 50  0001 C CNN "LCSC Part Number"
+F 7 "SOT-353" H 5100 5900 50  0001 C CNN "Package"
+	1    5100 5900
+	1    0    0    -1  
+$EndComp
+Text Label 5000 5850 2    50   ~ 0
+NCSn
+Wire Wire Line
+	4500 5950 5000 5950
+$Comp
+L power:GND #PWR?
+U 1 1 5B18406F
+P 5000 6200
+F 0 "#PWR?" H 5000 5950 50  0001 C CNN
+F 1 "GND" H 5005 6027 50  0000 C CNN
+F 2 "" H 5000 6200 50  0001 C CNN
+F 3 "" H 5000 6200 50  0001 C CNN
+	1    5000 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5B184075
+P 4300 6200
+F 0 "#PWR?" H 4300 5950 50  0001 C CNN
+F 1 "GND" H 4305 6027 50  0000 C CNN
+F 2 "" H 4300 6200 50  0001 C CNN
+F 3 "" H 4300 6200 50  0001 C CNN
+	1    4300 6200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5000 6200 5000 6050
+$Comp
+L power:VCC #PWR?
+U 1 1 5B18407C
+P 5000 5700
+F 0 "#PWR?" H 5000 5550 50  0001 C CNN
+F 1 "VCC" H 5017 5873 50  0000 C CNN
+F 2 "" H 5000 5700 50  0001 C CNN
+F 3 "" H 5000 5700 50  0001 C CNN
+	1    5000 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR?
+U 1 1 5B184082
+P 4150 6000
+F 0 "#PWR?" H 4150 5850 50  0001 C CNN
+F 1 "VCC" V 4168 6127 50  0000 L CNN
+F 2 "" H 4150 6000 50  0001 C CNN
+F 3 "" H 4150 6000 50  0001 C CNN
+	1    4150 6000
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5450 5900 5900 5900
+Text Label 4150 5900 2    50   ~ 0
+FT-DTR
+Wire Wire Line
+	6800 5100 6800 5200
+Wire Wire Line
+	6200 5100 6200 5150
+Wire Wire Line
+	6200 5150 5700 5150
+Wire Wire Line
+	5700 5150 5700 5200
+Connection ~ 6200 5150
+Wire Wire Line
+	6200 5150 6200 5200
+Wire Wire Line
+	4800 2450 4800 2550
+$Comp
+L power:VCC #PWR?
+U 1 1 5B184091
+P 4300 5700
+F 0 "#PWR?" H 4300 5550 50  0001 C CNN
+F 1 "VCC" H 4317 5873 50  0000 C CNN
+F 2 "" H 4300 5700 50  0001 C CNN
+F 3 "" H 4300 5700 50  0001 C CNN
+	1    4300 5700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5000 5700 5000 5750
+$Comp
+L Transistor_FET:2N7002 Q?
+U 1 1 5B18409C
+P 7600 5850
+F 0 "Q?" H 7806 5896 50  0000 L CNN
+F 1 "2N7002" H 7806 5805 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 7800 5775 50  0001 L CIN
+F 3 "https://www.fairchildsemi.com/datasheets/2N/2N7002.pdf" H 7600 5850 50  0001 L CNN
+F 4 "2N7002-G" H 7600 5850 50  0001 C CNN "Manufacture Part Number"
+F 5 "Changjiang Electronics Tech (CJ)" H 7600 5850 50  0001 C CNN "Manufacturer"
+F 6 "C164913" H 7600 5850 50  0001 C CNN "LCSC Part Number"
+F 7 "SOT-23-3" H 7600 5850 50  0001 C CNN "Package"
+	1    7600 5850
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5B1840A7
+P 7900 6100
+F 0 "R?" H 7970 6146 50  0000 L CNN
+F 1 "1k" H 7970 6055 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 7830 6100 50  0001 C CNN
+F 3 "~" H 7900 6100 50  0001 C CNN
+F 4 "0805W8F1001T5E" H 7900 6100 50  0001 C CNN "Manufacture Part Number"
+F 5 "Uniroyal Elec" H 7900 6100 50  0001 C CNN "Manufacturer"
+F 6 "C17513" H 7900 6100 50  0001 C CNN "LCSC Part Number"
+F 7 "0805" H 7900 6100 50  0001 C CNN "Package"
+	1    7900 6100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7500 6050 7500 6250
+$Comp
+L power:GND #PWR?
+U 1 1 5B1840AF
+P 7900 6250
+F 0 "#PWR?" H 7900 6000 50  0001 C CNN
+F 1 "GND" H 7905 6077 50  0000 C CNN
+F 2 "" H 7900 6250 50  0001 C CNN
+F 3 "" H 7900 6250 50  0001 C CNN
+	1    7900 6250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5B1840B5
+P 7500 6250
+F 0 "#PWR?" H 7500 6000 50  0001 C CNN
+F 1 "GND" H 7505 6077 50  0000 C CNN
+F 2 "" H 7500 6250 50  0001 C CNN
+F 3 "" H 7500 6250 50  0001 C CNN
+	1    7500 6250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7900 5950 7900 5850
+Wire Wire Line
+	7900 5850 7800 5850
+$Comp
+L Device:R R?
+U 1 1 5B1840C1
+P 7500 5400
+F 0 "R?" H 7570 5446 50  0000 L CNN
+F 1 "1k" H 7570 5355 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 7430 5400 50  0001 C CNN
+F 3 "~" H 7500 5400 50  0001 C CNN
+F 4 "0805W8F1001T5E" H 7500 5400 50  0001 C CNN "Manufacture Part Number"
+F 5 "Uniroyal Elec" H 7500 5400 50  0001 C CNN "Manufacturer"
+F 6 "C17513" H 7500 5400 50  0001 C CNN "LCSC Part Number"
+F 7 "0805" H 7500 5400 50  0001 C CNN "Package"
+	1    7500 5400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D_ALT D?
+U 1 1 5B1840CC
+P 7850 5400
+F 0 "D?" V 7804 5479 50  0000 L CNN
+F 1 "1N4007" V 7895 5479 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-123" H 7850 5400 50  0001 C CNN
+F 3 "~" H 7850 5400 50  0001 C CNN
+F 4 "1N4007" V 7850 5400 50  0001 C CNN "Manufacture Part Number"
+F 5 "Guangdong Hottech" V 7850 5400 50  0001 C CNN "Manufacturer"
+F 6 "C181127" V 7850 5400 50  0001 C CNN "LCSC Part Number"
+F 7 "SOD-123" V 7850 5400 50  0001 C CNN "Package"
+	1    7850 5400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7500 5550 7500 5600
+Wire Wire Line
+	7500 5600 7850 5600
+Wire Wire Line
+	7850 5600 7850 5550
+Connection ~ 7500 5600
+Wire Wire Line
+	7500 5600 7500 5650
+Wire Wire Line
+	7500 5250 7500 5200
+Wire Wire Line
+	7850 5250 7850 5200
+Wire Wire Line
+	7850 5200 7500 5200
+Connection ~ 7500 5200
+Wire Wire Line
+	7500 5200 7500 5150
+$Comp
+L power:VCC #PWR?
+U 1 1 5B1840DD
+P 7500 5150
+F 0 "#PWR?" H 7500 5000 50  0001 C CNN
+F 1 "VCC" H 7517 5323 50  0000 C CNN
+F 2 "" H 7500 5150 50  0001 C CNN
+F 3 "" H 7500 5150 50  0001 C CNN
+	1    7500 5150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7500 5600 7350 5600
+Text Label 7350 5600 2    50   ~ 0
+TWCL-SB
+Wire Wire Line
+	7900 5850 8000 5850
+Connection ~ 7900 5850
+Text Label 8000 5850 0    50   ~ 0
+MCU-SBO
+Wire Wire Line
+	10250 1050 9850 1050
+Text Label 9850 1050 2    50   ~ 0
+TWCL-SB
+Text Label 950  2150 0    50   ~ 0
+ALERT
+Text Label 950  2250 0    50   ~ 0
+MOS
+Text Label 950  2350 0    50   ~ 0
+MIS
+$Comp
+L Transistor_FET:2N7002 Q?
+U 1 1 5B1840F9
+P 4350 7050
+F 0 "Q?" H 4556 7096 50  0000 L CNN
+F 1 "2N7002" H 4556 7005 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 4550 6975 50  0001 L CIN
+F 3 "https://www.fairchildsemi.com/datasheets/2N/2N7002.pdf" H 4350 7050 50  0001 L CNN
+F 4 "2N7002-G" H 4350 7050 50  0001 C CNN "Manufacture Part Number"
+F 5 "Changjiang Electronics Tech (CJ)" H 4350 7050 50  0001 C CNN "Manufacturer"
+F 6 "C164913" H 4350 7050 50  0001 C CNN "LCSC Part Number"
+F 7 "SOT-23-3" H 4350 7050 50  0001 C CNN "Package"
+	1    4350 7050
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Custom_Logic_74xxx:Buffer_Noninverting_1G U?
+U 1 1 5B184104
+P 4900 7050
+F 0 "U?" H 5150 6950 50  0000 C CNN
+F 1 "SN74LVC1G125DCKR" H 4900 7550 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-353_SC-70-5" H 4900 7050 50  0001 C CNN
+F 3 "" H 4900 7050 50  0001 C CNN
+F 4 "SN74LVC1G125DCKR" H 4900 7050 50  0001 C CNN "Manufacture Part Number"
+F 5 "Texas Instruments" H 4900 7050 50  0001 C CNN "Manufacturer"
+F 6 "C7833" H 4900 7050 50  0001 C CNN "LCSC Part Number"
+F 7 "SOT-353" H 4900 7050 50  0001 C CNN "Package"
+	1    4900 7050
+	-1   0    0    -1  
+$EndComp
+Text Label 5000 7000 0    50   ~ 0
+NCSn
+$Comp
+L power:VCC #PWR?
+U 1 1 5B18410C
+P 5000 6850
+F 0 "#PWR?" H 5000 6700 50  0001 C CNN
+F 1 "VCC" H 5017 7023 50  0000 C CNN
+F 2 "" H 5000 6850 50  0001 C CNN
+F 3 "" H 5000 6850 50  0001 C CNN
+	1    5000 6850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5B184112
+P 5000 7250
+F 0 "#PWR?" H 5000 7000 50  0001 C CNN
+F 1 "GND" H 5005 7077 50  0000 C CNN
+F 2 "" H 5000 7250 50  0001 C CNN
+F 3 "" H 5000 7250 50  0001 C CNN
+	1    5000 7250
+	1    0    0    -1  
+$EndComp
+Text Label 5000 7100 0    50   ~ 0
+CHECK
+Text Label 4250 6850 1    50   ~ 0
+ECHO
+$Comp
+L power:GND #PWR?
+U 1 1 5B18411A
+P 4250 7250
+F 0 "#PWR?" H 4250 7000 50  0001 C CNN
+F 1 "GND" H 4255 7077 50  0000 C CNN
+F 2 "" H 4250 7250 50  0001 C CNN
+F 3 "" H 4250 7250 50  0001 C CNN
+	1    4250 7250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5000 7250 5000 7200
+Wire Wire Line
+	5000 6850 5000 6900
+$Comp
+L Custom_Logic_74xxx:Buffer_Noninverting_1G U?
+U 1 1 5B184126
+P 7100 2400
+F 0 "U?" H 7350 2300 50  0000 C CNN
+F 1 "SN74LVC1G125DCKR" H 7200 2900 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-353_SC-70-5" H 7100 2400 50  0001 C CNN
+F 3 "" H 7100 2400 50  0001 C CNN
+F 4 "SN74LVC1G125DCKR" H 7100 2400 50  0001 C CNN "Manufacture Part Number"
+F 5 "Texas Instruments" H 7100 2400 50  0001 C CNN "Manufacturer"
+F 6 "C7833" H 7100 2400 50  0001 C CNN "LCSC Part Number"
+F 7 "SOT-353" H 7100 2400 50  0001 C CNN "Package"
+	1    7100 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR?
+U 1 1 5B18412D
+P 7000 2200
+F 0 "#PWR?" H 7000 2050 50  0001 C CNN
+F 1 "VCC" H 7017 2373 50  0000 C CNN
+F 2 "" H 7000 2200 50  0001 C CNN
+F 3 "" H 7000 2200 50  0001 C CNN
+	1    7000 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5B184133
+P 7000 2600
+F 0 "#PWR?" H 7000 2350 50  0001 C CNN
+F 1 "GND" H 7005 2427 50  0000 C CNN
+F 2 "" H 7000 2600 50  0001 C CNN
+F 3 "" H 7000 2600 50  0001 C CNN
+	1    7000 2600
+	1    0    0    -1  
+$EndComp
+Text Label 7000 2350 2    50   ~ 0
+NCSn
+Text Label 7000 2450 2    50   ~ 0
+ALERT
+$Comp
+L Device:R R?
+U 1 1 5B18413F
+P 7600 2400
+F 0 "R?" V 7393 2400 50  0000 C CNN
+F 1 "1k" V 7484 2400 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 7530 2400 50  0001 C CNN
+F 3 "~" H 7600 2400 50  0001 C CNN
+F 4 "0805W8F1001T5E" H 7600 2400 50  0001 C CNN "Manufacture Part Number"
+F 5 "Uniroyal Elec" H 7600 2400 50  0001 C CNN "Manufacturer"
+F 6 "C17513" H 7600 2400 50  0001 C CNN "LCSC Part Number"
+F 7 "0805" H 7600 2400 50  0001 C CNN "Package"
+	1    7600 2400
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:LED_ALT D?
+U 1 1 5B18414A
+P 7800 2600
+F 0 "D?" V 7850 2800 50  0000 R CNN
+F 1 "LED" V 7700 2800 50  0000 R CNN
+F 2 "" H 7800 2600 50  0001 C CNN
+F 3 "~" H 7800 2600 50  0001 C CNN
+F 4 "-" V 7800 2600 50  0001 C CNN "Manufacture Part Number"
+F 5 "-" V 7800 2600 50  0001 C CNN "Manufacturer"
+F 6 "-" V 7800 2600 50  0001 C CNN "LCSC Part Number"
+F 7 "-" V 7800 2600 50  0001 C CNN "Package"
+	1    7800 2600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5B184151
+P 7800 2750
+F 0 "#PWR?" H 7800 2500 50  0001 C CNN
+F 1 "GND" H 7805 2577 50  0000 C CNN
+F 2 "" H 7800 2750 50  0001 C CNN
+F 3 "" H 7800 2750 50  0001 C CNN
+	1    7800 2750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7800 2450 7800 2400
+Wire Wire Line
+	7800 2400 7750 2400
+Wire Wire Line
+	7000 2600 7000 2550
+Wire Wire Line
+	7000 2250 7000 2200
+$Comp
+L MCU_Microchip_ATtiny:ATtiny44A-MU U?
+U 1 1 5B18597F
+P 1900 5900
+F 0 "U?" H 1359 5946 50  0000 R CNN
+F 1 "ATtiny44A-MU" H 1359 5855 50  0000 R CNN
+F 2 "Package_DFN_QFN:QFN-20-1EP_4x4mm_P0.5mm_EP2.25x2.25mm" H 1900 5900 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/doc8183.pdf" H 1900 5900 50  0001 C CNN
+	1    1900 5900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5B186660
+P 1150 2450
+F 0 "#PWR?" H 1150 2200 50  0001 C CNN
+F 1 "GND" V 1155 2322 50  0000 R CNN
+F 2 "" H 1150 2450 50  0001 C CNN
+F 3 "" H 1150 2450 50  0001 C CNN
+	1    1150 2450
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1150 2450 950  2450
+Wire Wire Line
+	1150 2050 950  2050
+$Comp
+L Device:C C?
+U 1 1 5B18B0C7
+P 1650 4900
+F 0 "C?" V 1902 4900 50  0000 C CNN
+F 1 "100n" V 1811 4900 50  0000 C CNN
+F 2 "" H 1688 4750 50  0001 C CNN
+F 3 "~" H 1650 4900 50  0001 C CNN
+	1    1650 4900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5B18B2AE
+P 2000 4900
+F 0 "#PWR?" H 2000 4750 50  0001 C CNN
+F 1 "+5V" V 2015 5028 50  0000 L CNN
+F 2 "" H 2000 4900 50  0001 C CNN
+F 3 "" H 2000 4900 50  0001 C CNN
+	1    2000 4900
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2000 4900 1900 4900
+Wire Wire Line
+	1900 5000 1900 4900
+Connection ~ 1900 4900
+Wire Wire Line
+	1900 4900 1800 4900
+$Comp
+L power:GND #PWR?
+U 1 1 5B18F01A
+P 1500 4900
+F 0 "#PWR?" H 1500 4650 50  0001 C CNN
+F 1 "GND" V 1505 4772 50  0000 R CNN
+F 2 "" H 1500 4900 50  0001 C CNN
+F 3 "" H 1500 4900 50  0001 C CNN
+	1    1500 4900
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5B18F502
+P 1900 6800
+F 0 "#PWR?" H 1900 6550 50  0001 C CNN
+F 1 "GND" H 1905 6627 50  0000 C CNN
+F 2 "" H 1900 6800 50  0001 C CNN
+F 3 "" H 1900 6800 50  0001 C CNN
+	1    1900 6800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_02x03_Odd_Even J?
+U 1 1 5B1900D6
+P 2900 7400
+F 0 "J?" H 2950 7717 50  0000 C CNN
+F 1 "Conn_02x03_Odd_Even" H 2950 7626 50  0000 C CNN
+F 2 "" H 2900 7400 50  0001 C CNN
+F 3 "~" H 2900 7400 50  0001 C CNN
+	1    2900 7400
+	1    0    0    -1  
+$EndComp
+Text Label 2700 7300 2    50   ~ 0
+MISO
+Text Label 2700 7400 2    50   ~ 0
+MOSI
+Text Label 2700 7500 2    50   ~ 0
+RST
+Text Label 3200 7400 0    50   ~ 0
+SCL
+$Comp
+L power:VCC #PWR?
+U 1 1 5B190838
+P 3350 7300
+F 0 "#PWR?" H 3350 7150 50  0001 C CNN
+F 1 "VCC" V 3367 7428 50  0000 L CNN
+F 2 "" H 3350 7300 50  0001 C CNN
+F 3 "" H 3350 7300 50  0001 C CNN
+	1    3350 7300
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5B190985
+P 3200 7500
+F 0 "#PWR?" H 3200 7250 50  0001 C CNN
+F 1 "GND" H 3205 7327 50  0000 C CNN
+F 2 "" H 3200 7500 50  0001 C CNN
+F 3 "" H 3200 7500 50  0001 C CNN
+	1    3200 7500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3350 7300 3200 7300
+Text Label 2500 5800 0    50   ~ 0
+MISO
+Text Label 2500 5900 0    50   ~ 0
+MOSI
+Text Label 2500 5700 0    50   ~ 0
+SCL
+Text Label 2500 6500 0    50   ~ 0
+RST
+Text Label 2500 6400 0    50   ~ 0
+MOS
+NoConn ~ 2500 6200
+NoConn ~ 2500 6300
+$Comp
+L Connector:Conn_01x06 J?
+U 1 1 5B19C891
+P 750 2150
+F 0 "J?" H 670 2567 50  0000 C CNN
+F 1 "Conn_01x06" H 670 2476 50  0000 C CNN
+F 2 "" H 750 2150 50  0001 C CNN
+F 3 "~" H 750 2150 50  0001 C CNN
+	1    750  2150
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5B19CA9A
+P 1150 2050
+F 0 "#PWR?" H 1150 1900 50  0001 C CNN
+F 1 "+3.3V" V 1165 2178 50  0000 L CNN
+F 2 "" H 1150 2050 50  0001 C CNN
+F 3 "" H 1150 2050 50  0001 C CNN
+	1    1150 2050
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5B19CB81
+P 1150 1950
+F 0 "#PWR?" H 1150 1800 50  0001 C CNN
+F 1 "+5V" V 1165 2078 50  0000 L CNN
+F 2 "" H 1150 1950 50  0001 C CNN
+F 3 "" H 1150 1950 50  0001 C CNN
+	1    1150 1950
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1150 1950 950  1950
 $EndSCHEMATC
