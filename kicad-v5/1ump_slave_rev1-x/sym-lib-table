@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name 1ump-slave_rev1-x-rescue)(type Legacy)(uri ${KIPRJMOD}/1ump-slave_rev1-x-rescue.lib)(options "")(descr ""))
+)
