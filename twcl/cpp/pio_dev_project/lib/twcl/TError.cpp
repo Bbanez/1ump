@@ -28,15 +28,15 @@ String TError::toString()	{
 	String s = "";
 	s += lvl;
 	s += SPLIT;
-	s += msg;
+	s += c;
 	return s;
 }
 String TError::toMonitor()	{
 	String s = "";
 	s += ">>>   TError\r\nLevel: ";
 	s += lvl;
-	s += "\r\nMessage: ";
-	s += msg;
+	s += "\r\nCode: ";
+	s += c;
 	s += "\r\n";
 	return s;
 }
