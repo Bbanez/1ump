@@ -1,4 +1,4 @@
-#include "THandler.h"
+#include "THandlerSecure.h"
 
 THandler::THandler(TAddress myAddress, TAddress netmask, unsigned char role)	{
 	address = myAddress;
@@ -188,15 +188,82 @@ bool THandler::isRedirect()	{
 	}
 	return false;
 }
-String THandler::getBuffer()	{
-	return buffer;
+String THandler::getBuffer()	{ return buffer; }
+TPacket THandler::getPacket()	{ return packet; }
+TAddress THandler::getMyAddress()	{ return address; }
+TAddress THandler::getNetmask()	{ return mask; }
+
+void THandler::setOriginKey(unsigned char *value, unsigned char size)	{
+	okSize = size;
+	delete [] oKey;
+	oKey = new unsigned char[okSize];
+	for(unsigned char i = 0; i < okSize; i++)	{
+		oKey[i] = value[i];
+	}
 }
-TPacket THandler::getPacket()	{
-	return packet;
+void THandler::setKey()	{
+	kSize = 4;
+	delete [] key;
+	key = new unsigned char[kSize];
+	for(unsigned char i = 0; i < kSize; i++)	{
+		key[i] = rand() % 255;
+	}
 }
-TAddress THandler::getMyAddress()	{
-	return address;
+void THandler::setKey(unsigned char *value, unsigned char size)	{
+	kSize = size;
+	delete [] key;
+	key = new unsigned char[kSize];
+	for(unsigned char i = 0; i < kSize; i++)	{
+		key[i] = value[i];
+	}
 }
-TAddress THandler::getNetmask()	{
-	return mask;
+unsigned char THandler::getKeySize()	{
+	return kSize;
+}
+void THandler::getKey(unsigned char *value)	{
+	for(unsigned char i = 0; i < kSize; i++)	{
+		value[i] = key[i];
+	}
+}
+void THandler::encrypt(unsigned char *data)	{
+	unsigned int dataSize = sizeof(data)/sizeof(data[0]);
+	unsigned char buf[kSize];
+	for(unsigned int i = 0; i < dataSize; i+=kSize)	{
+		if(i + kSize < dataSize)	{
+			for(unsigned char j = 0; j < kSize; j++)	{
+				buf[j] = (byte) (data[i + j] ^ buf[j]);
+				data[i + j] += (char)buf[j];
+			}
+		}else	{
+			int j = 0;
+			while(i + j < dataSize)	{
+				buf[j] = (byte) (data[i + j] ^ buf[j]);
+				data[i + j] = buf[j];
+				j++;
+			}
+		}
+	}
+}
+void THandler::decrypt(unsigned char *data)	{
+	unsigned int dataSize = sizeof(data)/sizeof(data[0]);
+	unsigned char buf[kSize], buf2[kSize];
+	for(unsigned int i = 0; i < dataSize; i+=kSize)	{
+		if(i + kSize < dataSize)	{
+			for(unsigned char j = 0; j < kSize; j++)	{
+				buf2[j] = data[i + j];
+				buf[j] = (byte) (data[i + j] ^ buf[j]);
+				data[i + j] = buf[j];
+				buf[j] = buf2[j];
+			}
+		}else	{
+			int j = 0;
+			while(i + j < dataSize)	{
+				buf2[j] = data[i + j];
+				buf[j] = (byte) (data[i + j] ^ buf[j]);
+				data[i + j] = buf[j];
+				buf[j] = buf2[j];
+				j++;
+			}
+		}
+	}
 }

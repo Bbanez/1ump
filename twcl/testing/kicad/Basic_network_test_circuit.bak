@@ -1,0 +1,721 @@
+EESchema Schematic File Version 4
+LIBS:twcl_test_circuit-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 3 3
+Title "TWCL basic network test circuit"
+Date "2018-09-11"
+Rev "1.0"
+Comp "1ump - Open Source"
+Comment1 "MASTER MCU can be any MCU with 2 or more hardware UARTs."
+Comment2 "SLAVE n MCU can be any MCU with 1 or more hardware UARTs."
+Comment3 "1Mbps can be achieved with low noise on test boards."
+Comment4 "Tested with TH components on test board and ATmega2560."
+$EndDescr
+Text Notes 4950 1800 0    50   ~ 0
+MASTER MCU
+Text Notes 5050 2000 1    50   ~ 0
+TX
+Text Notes 5150 2000 1    50   ~ 0
+RX
+Text Notes 5600 1800 0    50   ~ 0
+SLAVE 1 MCU
+Text Notes 5700 2000 1    50   ~ 0
+TX
+Text Notes 5800 2000 1    50   ~ 0
+RX
+Text Notes 5900 2000 1    50   ~ 0
+BIP
+Text Notes 6000 2000 1    50   ~ 0
+BOP
+Wire Notes Line
+	5500 2000 4900 2000
+Wire Notes Line
+	4900 2000 4900 1700
+Wire Notes Line
+	4900 1700 5500 1700
+Wire Notes Line
+	5500 1700 5500 2000
+Wire Notes Line
+	5550 2000 5550 1700
+Wire Notes Line
+	5550 1700 6150 1700
+Wire Notes Line
+	6150 1700 6150 2000
+Wire Notes Line
+	6150 2000 5550 2000
+Wire Bus Line
+	5050 2000 5050 2100
+Wire Bus Line
+	5150 2000 5150 2100
+Wire Bus Line
+	5700 2000 5700 2100
+Wire Bus Line
+	5800 2000 5800 2100
+Wire Bus Line
+	5900 2000 5900 2100
+Wire Bus Line
+	6000 2000 6000 2100
+Text Notes 6250 1800 0    50   ~ 0
+SLAVE 2 MCU
+Text Notes 6350 2000 1    50   ~ 0
+TX
+Text Notes 6450 2000 1    50   ~ 0
+RX
+Text Notes 6550 2000 1    50   ~ 0
+BIP
+Text Notes 6650 2000 1    50   ~ 0
+BOP
+Wire Notes Line
+	6200 2000 6200 1700
+Wire Notes Line
+	6200 1700 6800 1700
+Wire Notes Line
+	6800 1700 6800 2000
+Wire Notes Line
+	6800 2000 6200 2000
+Wire Bus Line
+	6350 2000 6350 2100
+Wire Bus Line
+	6450 2000 6450 2100
+Wire Bus Line
+	6550 2000 6550 2100
+Wire Bus Line
+	6650 2000 6650 2100
+$Comp
+L Transistor_FET:BS170 Q301
+U 1 1 5B97FEF0
+P 4450 3100
+F 0 "Q301" H 4655 3146 50  0000 L CNN
+F 1 "BS170" H 4655 3055 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 4650 3025 50  0001 L CIN
+F 3 "http://www.fairchildsemi.com/ds/BS/BS170.pdf" H 4450 3100 50  0001 L CNN
+	1    4450 3100
+	1    0    0    -1  
+$EndComp
+Text GLabel 4550 2900 1    50   UnSpc ~ 0
+TWCL-RX
+Text GLabel 3350 3000 0    50   Input ~ 0
+M-TX
+$Comp
+L power:Earth #PWR0304
+U 1 1 5B97FEF9
+P 4550 3300
+F 0 "#PWR0304" H 4550 3050 50  0001 C CNN
+F 1 "Earth" H 4550 3150 50  0001 C CNN
+F 2 "" H 4550 3300 50  0001 C CNN
+F 3 "~" H 4550 3300 50  0001 C CNN
+	1    4550 3300
+	1    0    0    -1  
+$EndComp
+Text GLabel 5050 2100 3    50   Output ~ 0
+M-TX
+Text GLabel 6950 4000 0    50   UnSpc ~ 0
+TWCL-TX
+Text GLabel 6950 4100 0    50   UnSpc ~ 0
+TWCL-RX
+Text GLabel 6950 4200 0    50   UnSpc ~ 0
+TWCL-B
+Text GLabel 5700 2100 3    50   Output ~ 0
+S1-TX
+Text GLabel 6350 2100 3    50   Output ~ 0
+S2-TX
+Text GLabel 6000 2100 3    50   Output ~ 0
+S1-B
+Text GLabel 6650 2100 3    50   Output ~ 0
+S2-B
+$Comp
+L Device:R R306
+U 1 1 5B97FF07
+P 6050 3250
+F 0 "R306" H 6120 3296 50  0000 L CNN
+F 1 "1k" H 6120 3205 50  0000 L CNN
+F 2 "" V 5980 3250 50  0001 C CNN
+F 3 "~" H 6050 3250 50  0001 C CNN
+	1    6050 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCOM #PWR0307
+U 1 1 5B97FF0E
+P 6050 3100
+F 0 "#PWR0307" H 6050 2950 50  0001 C CNN
+F 1 "VCOM" H 6067 3273 50  0000 C CNN
+F 2 "" H 6050 3100 50  0001 C CNN
+F 3 "" H 6050 3100 50  0001 C CNN
+	1    6050 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D_ALT D301
+U 1 1 5B97FF14
+P 5750 3250
+F 0 "D301" V 5750 3329 50  0000 L CNN
+F 1 "D_ALT" V 5795 3329 50  0001 L CNN
+F 2 "" H 5750 3250 50  0001 C CNN
+F 3 "~" H 5750 3250 50  0001 C CNN
+	1    5750 3250
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6050 3400 5750 3400
+Connection ~ 6050 3400
+Wire Wire Line
+	5750 3100 6050 3100
+Connection ~ 6050 3100
+Text GLabel 6000 3550 0    50   UnSpc ~ 0
+TWCL-TX
+Wire Wire Line
+	6000 3550 6050 3550
+Wire Wire Line
+	6050 3550 6050 3400
+$Comp
+L Device:R R307
+U 1 1 5B97FF22
+P 6050 4050
+F 0 "R307" H 6120 4096 50  0000 L CNN
+F 1 "1k" H 6120 4005 50  0000 L CNN
+F 2 "" V 5980 4050 50  0001 C CNN
+F 3 "~" H 6050 4050 50  0001 C CNN
+	1    6050 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCOM #PWR0308
+U 1 1 5B97FF29
+P 6050 3900
+F 0 "#PWR0308" H 6050 3750 50  0001 C CNN
+F 1 "VCOM" H 6067 4073 50  0000 C CNN
+F 2 "" H 6050 3900 50  0001 C CNN
+F 3 "" H 6050 3900 50  0001 C CNN
+	1    6050 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D_ALT D302
+U 1 1 5B97FF2F
+P 5750 4050
+F 0 "D302" V 5750 4129 50  0000 L CNN
+F 1 "D_ALT" V 5795 4129 50  0001 L CNN
+F 2 "" H 5750 4050 50  0001 C CNN
+F 3 "~" H 5750 4050 50  0001 C CNN
+	1    5750 4050
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6050 4200 5750 4200
+Connection ~ 6050 4200
+Wire Wire Line
+	5750 3900 6050 3900
+Connection ~ 6050 3900
+Text GLabel 6000 4350 0    50   UnSpc ~ 0
+TWCL-RX
+Wire Wire Line
+	6000 4350 6050 4350
+Wire Wire Line
+	6050 4350 6050 4200
+$Comp
+L Device:R R308
+U 1 1 5B97FF3D
+P 6050 4850
+F 0 "R308" H 6120 4896 50  0000 L CNN
+F 1 "1k" H 6120 4805 50  0000 L CNN
+F 2 "" V 5980 4850 50  0001 C CNN
+F 3 "~" H 6050 4850 50  0001 C CNN
+	1    6050 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCOM #PWR0309
+U 1 1 5B97FF44
+P 6050 4700
+F 0 "#PWR0309" H 6050 4550 50  0001 C CNN
+F 1 "VCOM" H 6067 4873 50  0000 C CNN
+F 2 "" H 6050 4700 50  0001 C CNN
+F 3 "" H 6050 4700 50  0001 C CNN
+	1    6050 4700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D_ALT D303
+U 1 1 5B97FF4A
+P 5750 4850
+F 0 "D303" V 5750 4929 50  0000 L CNN
+F 1 "D_ALT" V 5795 4929 50  0001 L CNN
+F 2 "" H 5750 4850 50  0001 C CNN
+F 3 "~" H 5750 4850 50  0001 C CNN
+	1    5750 4850
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6050 5000 5750 5000
+Connection ~ 6050 5000
+Wire Wire Line
+	5750 4700 6050 4700
+Connection ~ 6050 4700
+Text GLabel 6000 5150 0    50   UnSpc ~ 0
+TWCL-B
+Wire Wire Line
+	6000 5150 6050 5150
+Wire Wire Line
+	6050 5150 6050 5000
+$Comp
+L Transistor_FET:BS170 Q302
+U 1 1 5B97FF58
+P 4450 4100
+F 0 "Q302" H 4655 4146 50  0000 L CNN
+F 1 "BS170" H 4655 4055 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 4650 4025 50  0001 L CIN
+F 3 "http://www.fairchildsemi.com/ds/BS/BS170.pdf" H 4450 4100 50  0001 L CNN
+	1    4450 4100
+	1    0    0    -1  
+$EndComp
+Text GLabel 4550 3900 1    50   UnSpc ~ 0
+TWCL-TX
+Text GLabel 3350 4000 0    50   Input ~ 0
+S1-TX
+$Comp
+L Transistor_FET:BS170 Q304
+U 1 1 5B97FF61
+P 5200 3900
+F 0 "Q304" H 5406 3900 50  0000 L CNN
+F 1 "BS170" H 5405 3855 50  0001 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 5400 3825 50  0001 L CIN
+F 3 "http://www.fairchildsemi.com/ds/BS/BS170.pdf" H 5200 3900 50  0001 L CNN
+	1    5200 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R304
+U 1 1 5B97FF68
+P 5000 4150
+F 0 "R304" H 5070 4196 50  0000 L CNN
+F 1 "10k" H 5070 4105 50  0000 L CNN
+F 2 "" V 4930 4150 50  0001 C CNN
+F 3 "~" H 5000 4150 50  0001 C CNN
+	1    5000 4150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5000 4000 5000 3900
+Wire Wire Line
+	5300 4100 5300 4300
+Wire Wire Line
+	5300 4300 5000 4300
+Wire Wire Line
+	5000 3900 5000 3700
+Connection ~ 5000 3900
+Text GLabel 5000 3700 1    50   Input ~ 0
+S2-B
+Text GLabel 5300 3700 1    50   UnSpc ~ 0
+TWCL-B
+$Comp
+L Transistor_FET:BS170 Q305
+U 1 1 5B97FF76
+P 5200 4900
+F 0 "Q305" H 5406 4900 50  0000 L CNN
+F 1 "BS170" H 5405 4855 50  0001 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 5400 4825 50  0001 L CIN
+F 3 "http://www.fairchildsemi.com/ds/BS/BS170.pdf" H 5200 4900 50  0001 L CNN
+	1    5200 4900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R305
+U 1 1 5B97FF7D
+P 5000 5150
+F 0 "R305" H 5070 5196 50  0000 L CNN
+F 1 "10k" H 5070 5105 50  0000 L CNN
+F 2 "" V 4930 5150 50  0001 C CNN
+F 3 "~" H 5000 5150 50  0001 C CNN
+	1    5000 5150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5000 5000 5000 4900
+Wire Wire Line
+	5300 5100 5300 5300
+Wire Wire Line
+	5300 5300 5000 5300
+Wire Wire Line
+	5000 4900 5000 4700
+Connection ~ 5000 4900
+Text GLabel 5000 4700 1    50   Input ~ 0
+S2-B
+Text GLabel 5300 4700 1    50   UnSpc ~ 0
+TWCL-B
+$Comp
+L 74xx:74HC00 U301
+U 1 1 5B97FF8B
+P 3950 3100
+F 0 "U301" H 3950 3425 50  0000 C CNN
+F 1 "74HC00" H 3950 3334 50  0000 C CNN
+F 2 "" H 3950 3100 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74hc00" H 3950 3100 50  0001 C CNN
+	1    3950 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R301
+U 1 1 5B97FF92
+P 3550 2850
+F 0 "R301" H 3620 2896 50  0000 L CNN
+F 1 "10k" H 3620 2805 50  0000 L CNN
+F 2 "" V 3480 2850 50  0001 C CNN
+F 3 "~" H 3550 2850 50  0001 C CNN
+	1    3550 2850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3650 3000 3550 3000
+$Comp
+L power:VCOM #PWR0301
+U 1 1 5B97FF9A
+P 3550 2700
+F 0 "#PWR0301" H 3550 2550 50  0001 C CNN
+F 1 "VCOM" H 3567 2873 50  0000 C CNN
+F 2 "" H 3550 2700 50  0001 C CNN
+F 3 "" H 3550 2700 50  0001 C CNN
+	1    3550 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74HC00 U201
+U 2 1 5B97FFA0
+P 3950 4100
+F 0 "U201" H 3950 4425 50  0000 C CNN
+F 1 "74HC00" H 3950 4334 50  0000 C CNN
+F 2 "" H 3950 4100 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74hc00" H 3950 4100 50  0001 C CNN
+	2    3950 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:Earth #PWR0305
+U 1 1 5B97FFA7
+P 4550 4300
+F 0 "#PWR0305" H 4550 4050 50  0001 C CNN
+F 1 "Earth" H 4550 4150 50  0001 C CNN
+F 2 "" H 4550 4300 50  0001 C CNN
+F 3 "~" H 4550 4300 50  0001 C CNN
+	1    4550 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R302
+U 1 1 5B97FFAD
+P 3550 3850
+F 0 "R302" H 3620 3896 50  0000 L CNN
+F 1 "10k" H 3620 3805 50  0000 L CNN
+F 2 "" V 3480 3850 50  0001 C CNN
+F 3 "~" H 3550 3850 50  0001 C CNN
+	1    3550 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCOM #PWR0302
+U 1 1 5B97FFB4
+P 3550 3700
+F 0 "#PWR0302" H 3550 3550 50  0001 C CNN
+F 1 "VCOM" H 3567 3873 50  0000 C CNN
+F 2 "" H 3550 3700 50  0001 C CNN
+F 3 "" H 3550 3700 50  0001 C CNN
+	1    3550 3700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3550 3700 3450 3700
+Wire Wire Line
+	3450 3700 3450 4200
+Wire Wire Line
+	3450 4200 3650 4200
+Connection ~ 3550 3700
+Wire Wire Line
+	3650 4000 3550 4000
+Connection ~ 3550 4000
+Wire Wire Line
+	3550 4000 3350 4000
+Wire Wire Line
+	3550 2700 3450 2700
+Wire Wire Line
+	3450 2700 3450 3200
+Wire Wire Line
+	3450 3200 3650 3200
+Connection ~ 3550 2700
+Wire Wire Line
+	3350 3000 3550 3000
+Connection ~ 3550 3000
+$Comp
+L Transistor_FET:BS170 Q303
+U 1 1 5B97FFC7
+P 4450 5100
+F 0 "Q303" H 4655 5146 50  0000 L CNN
+F 1 "BS170" H 4655 5055 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 4650 5025 50  0001 L CIN
+F 3 "http://www.fairchildsemi.com/ds/BS/BS170.pdf" H 4450 5100 50  0001 L CNN
+	1    4450 5100
+	1    0    0    -1  
+$EndComp
+Text GLabel 4550 4900 1    50   UnSpc ~ 0
+TWCL-TX
+Text GLabel 3350 5000 0    50   Input ~ 0
+S2-TX
+$Comp
+L power:Earth #PWR0306
+U 1 1 5B97FFD0
+P 4550 5300
+F 0 "#PWR0306" H 4550 5050 50  0001 C CNN
+F 1 "Earth" H 4550 5150 50  0001 C CNN
+F 2 "" H 4550 5300 50  0001 C CNN
+F 3 "~" H 4550 5300 50  0001 C CNN
+	1    4550 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R303
+U 1 1 5B97FFD6
+P 3550 4850
+F 0 "R303" H 3620 4896 50  0000 L CNN
+F 1 "10k" H 3620 4805 50  0000 L CNN
+F 2 "" V 3480 4850 50  0001 C CNN
+F 3 "~" H 3550 4850 50  0001 C CNN
+	1    3550 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCOM #PWR0303
+U 1 1 5B97FFDD
+P 3550 4700
+F 0 "#PWR0303" H 3550 4550 50  0001 C CNN
+F 1 "VCOM" H 3567 4873 50  0000 C CNN
+F 2 "" H 3550 4700 50  0001 C CNN
+F 3 "" H 3550 4700 50  0001 C CNN
+	1    3550 4700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3550 4700 3450 4700
+Wire Wire Line
+	3450 4700 3450 5200
+Wire Wire Line
+	3450 5200 3650 5200
+Connection ~ 3550 4700
+Wire Wire Line
+	3650 5000 3550 5000
+Connection ~ 3550 5000
+Wire Wire Line
+	3550 5000 3350 5000
+Wire Wire Line
+	5000 5300 4550 5300
+Connection ~ 5000 5300
+Connection ~ 4550 5300
+Wire Wire Line
+	5000 4300 4550 4300
+Connection ~ 5000 4300
+Connection ~ 4550 4300
+$Comp
+L 74xx:74HC244 U302
+U 1 1 5B97FFF0
+P 7450 4500
+F 0 "U302" H 7150 5250 50  0000 C CNN
+F 1 "74HC244" H 7150 5150 50  0000 C CNN
+F 2 "" H 7450 4500 50  0001 C CNN
+F 3 "http://www.nxp.com/documents/data_sheet/74HC_HCT244.pdf" H 7450 4500 50  0001 C CNN
+	1    7450 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R309
+U 1 1 5B97FFF7
+P 6800 4900
+F 0 "R309" V 6593 4900 50  0000 C CNN
+F 1 "10k" V 6684 4900 50  0000 C CNN
+F 2 "" V 6730 4900 50  0001 C CNN
+F 3 "~" H 6800 4900 50  0001 C CNN
+	1    6800 4900
+	0    1    1    0   
+$EndComp
+$Comp
+L power:Earth #PWR0313
+U 1 1 5B97FFFE
+P 7450 5300
+F 0 "#PWR0313" H 7450 5050 50  0001 C CNN
+F 1 "Earth" H 7450 5150 50  0001 C CNN
+F 2 "" H 7450 5300 50  0001 C CNN
+F 3 "~" H 7450 5300 50  0001 C CNN
+	1    7450 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCOM #PWR0312
+U 1 1 5B980004
+P 7450 3600
+F 0 "#PWR0312" H 7450 3450 50  0001 C CNN
+F 1 "VCOM" H 7467 3773 50  0000 C CNN
+F 2 "" H 7450 3600 50  0001 C CNN
+F 3 "" H 7450 3600 50  0001 C CNN
+	1    7450 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCOM #PWR0311
+U 1 1 5B98000A
+P 6650 5000
+F 0 "#PWR0311" H 6650 4850 50  0001 C CNN
+F 1 "VCOM" V 6668 5128 50  0000 L CNN
+F 2 "" H 6650 5000 50  0001 C CNN
+F 3 "" H 6650 5000 50  0001 C CNN
+	1    6650 5000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R310
+U 1 1 5B980010
+P 6800 5000
+F 0 "R310" V 6700 5000 50  0000 C CNN
+F 1 "10k" V 6600 5000 50  0000 C CNN
+F 2 "" V 6730 5000 50  0001 C CNN
+F 3 "~" H 6800 5000 50  0001 C CNN
+	1    6800 5000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:Earth #PWR0310
+U 1 1 5B980017
+P 6650 4900
+F 0 "#PWR0310" H 6650 4650 50  0001 C CNN
+F 1 "Earth" H 6650 4750 50  0001 C CNN
+F 2 "" H 6650 4900 50  0001 C CNN
+F 3 "~" H 6650 4900 50  0001 C CNN
+	1    6650 4900
+	0    1    1    0   
+$EndComp
+Text GLabel 8550 4000 2    50   Output ~ 0
+TWCL-TX'
+Text GLabel 5150 2100 3    50   Input ~ 0
+TWCL-TX'
+Text GLabel 8550 4100 2    50   Output ~ 0
+TWCL-RX'
+Text GLabel 8550 4200 2    50   Output ~ 0
+TWCL-B'
+NoConn ~ 6950 4300
+NoConn ~ 6950 4400
+NoConn ~ 6950 4500
+NoConn ~ 6950 4600
+NoConn ~ 6950 4700
+NoConn ~ 7950 4300
+NoConn ~ 7950 4400
+NoConn ~ 7950 4500
+NoConn ~ 7950 4600
+NoConn ~ 7950 4700
+Text GLabel 5800 2100 3    50   Input ~ 0
+TWCL-RX'
+Text GLabel 6450 2100 3    50   Input ~ 0
+TWCL-RX'
+Text GLabel 5900 2100 3    50   Input ~ 0
+TWCL-B'
+Text GLabel 6550 2100 3    50   Input ~ 0
+TWCL-B'
+$Comp
+L Device:R R311
+U 1 1 5B98002F
+P 7950 3750
+F 0 "R311" H 8020 3796 50  0000 L CNN
+F 1 "1k" H 8020 3705 50  0000 L CNN
+F 2 "" V 7880 3750 50  0001 C CNN
+F 3 "~" H 7950 3750 50  0001 C CNN
+	1    7950 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R312
+U 1 1 5B980036
+P 8200 3750
+F 0 "R312" H 8270 3796 50  0000 L CNN
+F 1 "1k" H 8270 3705 50  0000 L CNN
+F 2 "" V 8130 3750 50  0001 C CNN
+F 3 "~" H 8200 3750 50  0001 C CNN
+	1    8200 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R313
+U 1 1 5B98003D
+P 8450 3750
+F 0 "R313" H 8520 3796 50  0000 L CNN
+F 1 "1k" H 8520 3705 50  0000 L CNN
+F 2 "" V 8380 3750 50  0001 C CNN
+F 3 "~" H 8450 3750 50  0001 C CNN
+	1    8450 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7950 3900 7950 4000
+Wire Wire Line
+	8200 3900 8200 4100
+Wire Wire Line
+	8450 3900 8450 4200
+Wire Wire Line
+	7950 4000 8550 4000
+Connection ~ 7950 4000
+Wire Wire Line
+	7950 4100 8200 4100
+Connection ~ 8200 4100
+Wire Wire Line
+	8200 4100 8550 4100
+Wire Wire Line
+	7950 4200 8450 4200
+Connection ~ 8450 4200
+Wire Wire Line
+	8450 4200 8550 4200
+Wire Wire Line
+	7950 3600 8200 3600
+Connection ~ 8200 3600
+Wire Wire Line
+	8200 3600 8450 3600
+Wire Wire Line
+	7950 3600 7450 3600
+Connection ~ 7950 3600
+Wire Wire Line
+	7450 3600 7450 3700
+Connection ~ 7450 3600
+$Comp
+L 74xx:74HC00 U201
+U 3 1 5B980056
+P 3950 5100
+F 0 "U201" H 3950 5425 50  0000 C CNN
+F 1 "74HC00" H 3950 5334 50  0000 C CNN
+F 2 "" H 3950 5100 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74hc00" H 3950 5100 50  0001 C CNN
+	3    3950 5100
+	1    0    0    -1  
+$EndComp
+Text Notes 6900 1800 0    50   ~ 0
+SLAVE n MCU
+Text Notes 7000 2000 1    50   ~ 0
+TX
+Text Notes 7100 2000 1    50   ~ 0
+RX
+Text Notes 7200 2000 1    50   ~ 0
+BIP
+Text Notes 7300 2000 1    50   ~ 0
+BOP
+Wire Notes Line
+	6850 2000 6850 1700
+Wire Notes Line
+	6850 1700 7450 1700
+Wire Notes Line
+	7450 1700 7450 2000
+Wire Notes Line
+	7450 2000 6850 2000
+Wire Bus Line
+	7000 2000 7000 2100
+Wire Bus Line
+	7100 2000 7100 2100
+Wire Bus Line
+	7200 2000 7200 2100
+Wire Bus Line
+	7300 2000 7300 2100
+$EndSCHEMATC

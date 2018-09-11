@@ -1,4 +1,4 @@
-#include "THandler.h"
+#include "THandlerExtended.h"
 
 THandler::THandler(TAddress myAddress, TAddress netmask, unsigned char role)	{
 	address = myAddress;
@@ -77,12 +77,39 @@ bool THandler::listen()	{
 							}
 						}else	{
 							clear();
+							error.set(0x000A, TERROR_EXCEPTION);
+							return true;
 						}
 					}break;
 					default:	{
 						buffer += rollingBuffer;
 						if(buffer.length() > maxBufferSize)	{
 							clear();
+							error.set(0x000B, TERROR_EXCEPTION);
+							return true;
+						}
+						switch(buffer.length())	{
+							case TPACKET_1ST_SPLIT_POSITION:	{
+								if(rollingBuffer != SPLIT_BYTE)	{
+									clear();
+									error.set(0x000C, TERROR_EXCEPTION);
+									return true;
+								}
+							}break;
+							case TPACKET_2ND_SPLIT_POSITION:	{
+								if(rollingBuffer != SPLIT_BYTE)	{
+									clear();
+									error.set(0x000D, TERROR_EXCEPTION);
+									return true;
+								}
+							}break;
+							case TPACKET_3RD_SPLIT_POSITION:	{
+								if(rollingBuffer != SPLIT_BYTE)	{
+									clear();
+									error.set(0x000E, TERROR_EXCEPTION);
+									return true;
+								}
+							}break;
 						}
 					}break;
 				}
